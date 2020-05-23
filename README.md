@@ -2,7 +2,7 @@
 
 ## Ejemplo de aplicación web. Listas hechas con angular.
 
-![https://github.com/jorgeabad/Listas_Angular/blob/master/img/listas.png](https://raw.githubusercontent.com/jorgeabad/Listas_Angular/img/listas.png)
+![https://github.com/jorgeabad/Listas_Angular/blob/master/img/listas.png](https://github.com/jorgeabad/Listas_Angular/blob/master/img/listas.png)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.0.
 
