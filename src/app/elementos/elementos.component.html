@@ -1,0 +1,55 @@
+<div>
+  <div>
+
+    <form ngNativeValidate (submit)="addElemento($event)">
+      <fieldset>
+
+        <legend>Añadir un producto a la lista</legend>
+        <p>
+          <label>Nombre del producto:</label><br>
+          <input [(ngModel)]="nuevoElemento.nombre" type="text" name="nuevoElemento.nombre" required>
+        </p>
+        <p>
+          <label>Descripcion del producto:</label><br>
+          <textarea [(ngModel)]="nuevoElemento.descripcion" type="textArea" name="nuevoElemento.descripcion" required></textarea>
+        </p>
+        <p>
+          <label>Precio del producto:</label><br>
+          <input [(ngModel)]="nuevoElemento.precio" type="number" name="nuevoElemento.precio" required>
+        </p>
+        <button type="submit">AÑADIR</button>
+      </fieldset>
+    </form>
+  </div>
+  <br>
+  <div>
+    <fieldset>
+      <legend>Eliminar de la tienda los productos seleccionados</legend>
+    <button (click)="deleteElementosSelec()">Eliminar los seleccionados</button>
+  </fieldset>
+  </div>
+  <div>
+    <h2>Lista de productos en tienda</h2>
+    <ul class="elementos">
+      <li *ngFor="let element of lista ; let i=index;" 
+        (click)="onSelect(element)">
+        <span class="badge">{{i}}</span>
+        <input type="checkbox" class="checkbox" [(ngModel)]="element.selec" />
+        <span [ngClass]="{'checked': element.selec}">{{ element.nombre }} </span>
+        <span (click)="deleteElemento(i)" class="delete-icon"> [X]</span>
+      </li>
+    </ul>
+  </div>
+
+  <div>
+    <h3>Lista de productos seleccionados:</h3>
+    <ul *ngIf="listaSeleccionados.length>0">
+      <li *ngFor="let element of listaSeleccionados">
+        <span>PRODUCTO: {{ element.nombre | uppercase}}.</span>
+        <span> DETALLES: {{ element.descripcion }}.</span>
+        <span> PRECIO: {{ element.precio }}</span>
+      </li>
+
+    </ul>
+  </div>
+</div>
